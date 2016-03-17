@@ -48,6 +48,9 @@ function populate_poky {
 
 function prepare_poky {
     mkdir -pv ${BLDDIR}/conf
+    
+    sed -e s:REPLACE:${PWD}:g ${PWD}/conf/bblayers.conf > ${BLDDIR}/conf/bblayers.conf
+    
     cp -av ${PWD}/conf/local.conf ${BLDDIR}/conf
     cat << EOF >> ${BLDDIR}/conf/local.conf
 PREMIRRORS_prepend = "\
@@ -57,8 +60,6 @@ PREMIRRORS_prepend = "\
      https://.*/.* file://${CACHE_DLDIR}/ \n"
 EOF
 
-    cd ${BLDDIR}
-    source ${TMPDIR}/poky/oe-init-build-env ${BLDDIR}
 }
 
 function check_tools {
