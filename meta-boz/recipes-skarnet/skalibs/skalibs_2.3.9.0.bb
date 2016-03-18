@@ -1,6 +1,7 @@
 SUMMARY = "skalibs is a package centralizing the free software / open source C development files used for building all software at skarnet.org"
 HOMEPAGE = "http://skarnet.org/software/skalibs/"
 LICENSE = "ISC"
+SECTION = "libs"
 LIC_FILES_CHKSUM = "file://COPYING;md5=1500f33d86c4956999052c0e137cd652"
 
 # DEPENDS = "virtual/libusb0 pcsc-lite"
@@ -23,5 +24,13 @@ SRC_URI[tarball.sha256sum] = "6229fb4fb415699bbff3b446ff44aa5b7fb9c512b83bd68ae4
 
 do_configure() {
     echo ${TARGET_SYS} > ${WORKDIR}/sysdeps/target
-    ./configure --with-sysdeps=${WORKDIR}/sysdeps
+    ./configure --with-sysdeps=${WORKDIR}/sysdeps  --disable-shared
+}
+
+do_install() {
+    make DESTDIR=${D} -C ${B} install-data install-dynlib
+}
+
+do_populate_sysroot() {
+    make DESTDIR=${STAGING_DIR} -C ${B} install-sysdeps install-lib install-include
 }
