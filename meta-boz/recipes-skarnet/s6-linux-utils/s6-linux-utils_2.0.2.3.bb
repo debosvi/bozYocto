@@ -1,5 +1,5 @@
-SUMMARY = "execline is a (non-interactive) scripting language, like sh ; but its syntax is quite different from a traditional shell syntax."
-HOMEPAGE = "http://www.skarnet.org/software/execline/"
+SUMMARY = "s6-linux-utils is a set of minimalistic Linux-specific system utilities."
+HOMEPAGE = "http://www.skarnet.org/software/s6-linux-utils/"
 LICENSE = "ISC"
 SECTION = "libs"
 LIC_FILES_CHKSUM = "file://COPYING;md5=1500f33d86c4956999052c0e137cd652"
@@ -7,11 +7,11 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=1500f33d86c4956999052c0e137cd652"
 DEPENDS = "skalibs"
 
 SRC_URI = " \
-    http://skarnet.org/software/execline/execline-${PV}.tar.gz;name=tarball \
+    http://skarnet.org/software/s6-linux-utils/s6-linux-utils-${PV}.tar.gz;name=tarball \
     "
 
-SRC_URI[tarball.md5sum] = "94eae34d6ebb1141864a2d9f7babd342"
-SRC_URI[tarball.sha256sum] = "ab4451d4992a5d7fb2ae34cffe4d0806e4902bf9aa27ee3b75617aa35379356f"
+SRC_URI[tarball.md5sum] = "e4ae28e1ca13d9cd7a226a2729c71bbf"
+SRC_URI[tarball.sha256sum] = "f959ffb9bb79865018becc6664d29faef22cb747a43db252879e11886b1b8cc3"
 
 # inherit autotools pkgconfig
 

@@ -1,4 +1,4 @@
-SUMMARY = "skalibs is a package centralizing the free software / open source C development files used for building all software at skarnet.org"
+SUMMARY = "skalibs is a package centralizing the free software / open source C development files used for building all software at skarnet.org."
 HOMEPAGE = "http://skarnet.org/software/skalibs/"
 LICENSE = "ISC"
 SECTION = "libs"
