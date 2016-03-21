@@ -32,5 +32,5 @@ do_install() {
 }
 
 do_populate_sysroot() {
-    make DESTDIR=${STAGING_DIR} -C ${B} install-sysdeps install-lib install-include
+    make DESTDIR=${STAGING_DIR_HOST} -C ${B} install-sysdeps install-lib install-include
 }
