@@ -4,7 +4,7 @@ LICENSE = "ISC"
 SECTION = "libs"
 LIC_FILES_CHKSUM = "file://COPYING;md5=1500f33d86c4956999052c0e137cd652"
 
-DEPENDS = "skalibs"
+DEPENDS = "s6 s6-dns"
 
 SRC_URI = " \
     http://skarnet.org/software/s6-networking/s6-networking-${PV}.tar.gz;name=tarball \

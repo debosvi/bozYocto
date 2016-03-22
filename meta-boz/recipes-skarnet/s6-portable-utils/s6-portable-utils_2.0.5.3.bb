@@ -18,7 +18,10 @@ SRC_URI[tarball.sha256sum] = "27be01b3d66df617ea7dbc21b55d253d5b9142463099f6944f
 # EXTRA_OECONF = "--with-sysdeps=${WORKDIR}/sysdeps"
 
 do_configure() {
-    ./configure --with-sysdeps=${STAGING_DIR_HOST}/usr/lib/skalibs/sysdeps  --with-include=${STAGING_DIR_HOST}/usr/include --with-lib=${STAGING_DIR_HOST}/usr/lib/skalibs --disable-shared
+    ./configure --with-sysdeps=${STAGING_DIR_HOST}/usr/lib/skalibs/sysdeps  \
+        --with-include=${STAGING_DIR_HOST}/usr/include  \
+        --with-lib=${STAGING_DIR_HOST}/usr/lib/skalibs  \
+        --disable-shared
 }
 
 do_install() {
