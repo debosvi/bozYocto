@@ -1,20 +1,17 @@
-SUMMARY = "s6-rc is a service manager for s6-based systems, i.e. a suite of programs that can start and stop services, both long-running daemons and one-time initialization scripts, in the proper order according to a dependency tree."
-HOMEPAGE = "http://www.skarnet.org/software/s6/"
+SUMMARY = "s6-networking is a suite of small networking utilities for Unix systems."
+HOMEPAGE = "http://www.skarnet.org/software/s6-networking/"
 LICENSE = "ISC"
 SECTION = "libs"
-LIC_FILES_CHKSUM = "file://COPYING;md5=a687612ed70a29618cd6987e9c0fd55a"
+LIC_FILES_CHKSUM = "file://COPYING;md5=1500f33d86c4956999052c0e137cd652"
 
-DEPENDS = "s6"
+DEPENDS = "skalibs"
 
 SRC_URI = " \
-    http://skarnet.org/software/s6-rc/s6-rc-${PV}.tar.gz;name=tarball \
+    http://skarnet.org/software/s6-networking/s6-networking-${PV}.tar.gz;name=tarball \
     "
 
-FILES_${PN} +=  "${base_prefix}/libexec"
-FILES_${PN}-dbg += "${base_prefix}/libexec/.debug"
-   
-SRC_URI[tarball.md5sum] = "23c15cf3413f34692dc1d6775e5cc54a"
-SRC_URI[tarball.sha256sum] = "93f30557e2e2e5c507b5becef2bd26f377be6b6c542fb4627c3122e1c2d83ef9"
+SRC_URI[tarball.md5sum] = "07a19e69db4978ef5c03cfd7daf3a827"
+SRC_URI[tarball.sha256sum] = "0fb4bd02371077c6bed2878d22c9acbfc01834da6752277fbb92d8312076640a"
 
 # inherit autotools pkgconfig
 
@@ -26,6 +23,7 @@ do_configure() {
         --with-lib=${STAGING_DIR_HOST}/usr/lib/skalibs  \
         --with-lib=${STAGING_DIR_HOST}/usr/lib/execline \
         --with-lib=${STAGING_DIR_HOST}/usr/lib/s6   \
+        --with-lib=${STAGING_DIR_HOST}/usr/lib/s6-dns   \
         --disable-shared
 }
 
