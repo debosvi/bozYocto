@@ -1,7 +1,8 @@
+
 #/bin/bash 
 
 ## shows debug information
-set -x
+#set -x
 
 GIT_VERSION=`command -v git`
 WGET_VERSION=`command -v wget`
@@ -16,8 +17,8 @@ POKY_MAJOR=2.0.1
 POKY_VER=14.0.1
 
 POKY_ARCHIVE=poky-${POKY_FLAVOR}-${POKY_VER}.tar.bz2
-POKY_URL="http://downloads.yoctoproject.org/releases/yocto/yocto-${POKY_MAJOR}/${POKY_ARCHIVE}"
-POKY_URL="http://downloads.yoctoproject.org/releases/yocto/yocto-${POKY_MAJOR}/yocto-${POKY_MAJOR}.md5sum"
+POKY_URL_ARCHIVE="http://downloads.yoctoproject.org/releases/yocto/yocto-${POKY_MAJOR}/${POKY_ARCHIVE}"
+POKY_URL_CHECKSUM="http://downloads.yoctoproject.org/releases/yocto/yocto-${POKY_MAJOR}/${POKY_ARCHIVE}.md5sum"
 
 TMPDIR=${PWD}/tmp
 DLDIR=${PWD}/dl
@@ -26,7 +27,7 @@ BLDDIR=${PWD}/build
 function get_poky {
     if [ ! -f ${DLDIR}/${POKY_ARCHIVE} ]; then
         ${ECHO_CMD} "\e[0;33mDownload poky Git repository\e[0m"
-        wget -c ${POKY_URL} -O ${DLDIR}/${POKY_ARCHIVE}
+        wget -c ${POKY_URL_ARCHIVE} -O ${DLDIR}/${POKY_ARCHIVE}
     else
         ${ECHO_CMD} "\e[0;32mPoky Git archive located yet\e[0m"    
     fi
@@ -53,7 +54,7 @@ function prepare_poky {
     
     cp -av ${PWD}/conf/local.conf ${BLDDIR}/conf
     cat << EOF >> ${BLDDIR}/conf/local.conf
-PREMIRRORS_prepend = "\
+PREMIRRORS_prepend = "  \
      git://.*/.* file://${CACHE_DLDIR}/ \n \
      ftp://.*/.* file://${CACHE_DLDIR}/ \n \
      http://.*/.* file://${CACHE_DLDIR}/ \n \
