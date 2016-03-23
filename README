@@ -1,0 +1,3 @@
+bozYocto project is the yocto integration for all boz projects and dependencies.
+
+It aims to build variety of firmwares, such as qemu-like and Rpi.
