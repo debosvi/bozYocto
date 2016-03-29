@@ -9,7 +9,7 @@ WGET_VERSION=`command -v wget`
 
 ECHO_CMD="echo -e"
 
-CACHE_DLDIR=${CACHE_DLDIR:-${HOME}/poky-dl}
+CACHE_DLDIR=${CACHE_DLDIR:-/opt/poky/downloads}
 
 
 POKY_FLAVOR=jethro
