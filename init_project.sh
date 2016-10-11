@@ -12,9 +12,9 @@ ECHO_CMD="echo -e"
 CACHE_DLDIR=${CACHE_DLDIR:-/opt/poky/downloads}
 
 
-POKY_FLAVOR=jethro
-POKY_MAJOR=2.0.1
-POKY_VER=14.0.1
+POKY_FLAVOR=krogoth
+POKY_MAJOR=2.1.1
+POKY_VER=15.0.1
 
 POKY_ARCHIVE=poky-${POKY_FLAVOR}-${POKY_VER}.tar.bz2
 POKY_URL_ARCHIVE="http://downloads.yoctoproject.org/releases/yocto/yocto-${POKY_MAJOR}/${POKY_ARCHIVE}"
