@@ -9,7 +9,7 @@ WGET_VERSION=`command -v wget`
 
 ECHO_CMD="echo -e"
 
-CACHE_DLDIR=${CACHE_DLDIR:-/opt/poky/downloads}
+CACHE_DLDIR=${CACHE_DLDIR:-/opt/projects/poky/downloads}
 
 
 POKY_FLAVOR=krogoth
